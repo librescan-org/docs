@@ -1,12 +1,23 @@
 # Introduction
 
-QANplatform is looking for developers contributing to developing the backend of a novel, openly accessible and truly free blockchain explorer called Librescan.
+QANplatform is looking for developers contributing to developing of a novel, openly accessible and truly free blockchain explorer called LibreScan.
+
+## Problem
 
 There is an eager need for a non-centralized, easily self-hostable & user friendly explorer, since while (most) blockchains are properly decentralized, 99% of users interact with them using completely centralized UIs.
 
 The most often used type of such an evil UI is the block explorer itself.
 
 Main issue is going 100% against blockchains' decentralization principles, as users are effectively associating all their valuable information (their wallet addresses, balances, owned token addresses etc.) with their IP addresses as soon as they make a lookup for them through such centralized explorers.
+
+Even worse is that if any organization would ever decide to censor / ban blockchains and cryptocurrencies, they could be very effective by cutting off access to these very services.
+Imagine a community highly reliant on these explorers waking up to a day where non of their points of trust is reachable.
+
+This brings the next problem, which is trust itself. Whatever data these centralized services display, the users believe. Another important philosophy cornerstone of blockchain is the "never trust, always verify". Well, the centralized explorers go against this principle 100% as well by giving users a false comfort of exposing blockchain data that is supposedly verified. They could easily showcase false data and 99% of the users would believe it, since they have no verification tooling!
+
+## Solution
+
+All above issues can be solved by providing a truly free & open-source solution for this usecase. Companies have been profiteering way too long already of selling user data (blockchain data <-> personal metadata mappings) putting members of our community at risk!
 
 The goal is to give the blockchain community an easily self hostable solution making the UI part just as much decentralized as blockchains themselves are.
 

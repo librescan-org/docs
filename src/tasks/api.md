@@ -36,3 +36,10 @@ If you want to see the actual numbers, check the popular [Benchmark game](https:
 While there are way more performant solutions than NodeJS (Go, Rust, C ...) they have way smaller communities (in descending order).
 
 Since the heavy lifting will be done by the scraper module anyway, NodeJS is a sane choice for the API component as it has to handle a very limited workflow.
+
+# [> register <](https://forms.gle/92JWCf18ejMaaFSF6) as a contributor
+
+The detailed roadmap of LibreScan will be laid out in January 2022.
+It is highly important that the team has a ballpark overview how many contributors we can expect!
+
+If you share the same mindset and you are willing to add value to the crypto community sign up via [this link](https://forms.gle/92JWCf18ejMaaFSF6).

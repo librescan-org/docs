@@ -38,3 +38,10 @@ We did, and Vue is definitely gaining traction:
 ![](../assets/vue-chart.png)
 
 Sure GitHub stars are not a de-facto measurement, but it clearly projects tendency. The community growth confirms this as well!
+
+# [> register <](https://forms.gle/92JWCf18ejMaaFSF6) as a contributor
+
+The detailed roadmap of LibreScan will be laid out in January 2022.
+It is highly important that the team has a ballpark overview how many contributors we can expect!
+
+If you share the same mindset and you are willing to add value to the crypto community sign up via [this link](https://forms.gle/92JWCf18ejMaaFSF6).

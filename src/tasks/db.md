@@ -95,3 +95,10 @@ Again, the Philisophy of the technologies used is another important factor as we
 > Unlike PostgreSQL, MySQL has always been under corporate control. Original developer MySQL AB was acquired by Sun Microsystems in 2008, shortly before Sun was itself acquired by Oracle in 2010.
 
 *Source from [fivetran.com](https://www.fivetran.com/blog/postgresql-vs-mysql)*
+
+# [> register <](https://forms.gle/92JWCf18ejMaaFSF6) as a contributor
+
+The detailed roadmap of LibreScan will be laid out in January 2022.
+It is highly important that the team has a ballpark overview how many contributors we can expect!
+
+If you share the same mindset and you are willing to add value to the crypto community sign up via [this link](https://forms.gle/92JWCf18ejMaaFSF6).

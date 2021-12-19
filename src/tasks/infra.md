@@ -30,3 +30,10 @@ If you can & enjoy building a Kubernetes cluster from scratch on bare metal usin
 
 The choice here was straightforward, [Terraform](https://www.terraform.io) really shines in this field.
 It supports the vast majority of any possible deployment target as documented [here](https://registry.terraform.io/browse/providers).
+
+# [> register <](https://forms.gle/92JWCf18ejMaaFSF6) as a contributor
+
+The detailed roadmap of LibreScan will be laid out in January 2022.
+It is highly important that the team has a ballpark overview how many contributors we can expect!
+
+If you share the same mindset and you are willing to add value to the crypto community sign up via [this link](https://forms.gle/92JWCf18ejMaaFSF6).

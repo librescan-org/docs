@@ -68,3 +68,10 @@ Rust has a way steeper learning curve and has unquestionably harder to understan
 
 Comparing all the above benefits of Go with the performance tradeoff against Rust, the choice was a no-brainer.
 If you love Go & crypto you should really join the development to build something truly magnificent for this space!
+
+# [> register <](https://forms.gle/92JWCf18ejMaaFSF6) as a contributor
+
+The detailed roadmap of LibreScan will be laid out in January 2022.
+It is highly important that the team has a ballpark overview how many contributors we can expect!
+
+If you share the same mindset and you are willing to add value to the crypto community sign up via [this link](https://forms.gle/92JWCf18ejMaaFSF6).

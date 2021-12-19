@@ -22,3 +22,10 @@ As a result data meant to kept private stays private indeed.
 | [**scraper**](https://github.com/librescan-org/scraper) [[docs]](https://librescan-org.github.io/docs/tasks/scraper)  | Go          | Scrapes & structures blockchain data                |
 | [**deploy**](https://github.com/librescan-org/deploy) [[docs]](https://librescan-org.github.io/docs/tasks/deploy)   | Various     | Orchestration platform manifests                    |
 | [**infra**](https://github.com/librescan-org/infra) [[docs]](https://librescan-org.github.io/docs/tasks/infra)    | Terraform   | Infrastructure as code for popular platforms        |
+
+# [> register <](https://forms.gle/92JWCf18ejMaaFSF6) as a contributor
+
+The detailed roadmap of LibreScan will be laid out in January 2022.
+It is highly important that the team has a ballpark overview how many contributors we can expect!
+
+If you share the same mindset and you are willing to add value to the crypto community sign up via [this link](https://forms.gle/92JWCf18ejMaaFSF6).

@@ -85,3 +85,9 @@ The other modules can be chosen by us developers, but we surely must not force u
 - [Docker Swarm](https://docs.docker.com/engine/swarm/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
+# [> register <](https://forms.gle/92JWCf18ejMaaFSF6) as a contributor
+
+The detailed roadmap of LibreScan will be laid out in January 2022.
+It is highly important that the team has a ballpark overview how many contributors we can expect!
+
+If you share the same mindset and you are willing to add value to the crypto community sign up via [this link](https://forms.gle/92JWCf18ejMaaFSF6).

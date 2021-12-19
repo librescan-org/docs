@@ -7,3 +7,4 @@
   - [DB designers](./tasks/db.md)
   - [Scraper developers](./tasks/scraper.md)
   - [DevOps magicians](./tasks/devops.md)
+  - [Infra engineers](./tasks/infra.md)

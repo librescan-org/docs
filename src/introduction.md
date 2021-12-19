@@ -11,3 +11,14 @@ Main issue is going 100% against blockchains' decentralization principles, as us
 The goal is to give the blockchain community an easily self hostable solution making the UI part just as much decentralized as blockchains themselves are.
 
 As a result data meant to kept private stays private indeed.
+
+## Quick overview of components
+
+| Module                      | Lang / Tech | Purpose                                             |
+| --------------------------- | ----------- | --------------------------------------------------- |
+| [**frontend**](https://github.com/librescan-org/frontend) [[docs]](https://librescan-org.github.io/docs/tasks/frontend) | Vue3        | Responsible web frontend                            |
+| [**api**](https://github.com/librescan-org/api) [[docs]](https://librescan-org.github.io/docs/tasks/api)      | NodeJS      | Retrieves and serves chain data from DB to frontend |
+| [**db**](https://github.com/librescan-org/db) [[docs]](https://librescan-org.github.io/docs/tasks/db)       | PostgreSQL  | Stores restructured chain data from scraper         |
+| [**scraper**](https://github.com/librescan-org/scraper) [[docs]](https://librescan-org.github.io/docs/tasks/scraper)  | Go          | Scrapes & structures blockchain data                |
+| [**deploy**](https://github.com/librescan-org/deploy) [[docs]](https://librescan-org.github.io/docs/tasks/deploy)   | Various     | Orchestration platform manifests                    |
+| [**infra**](https://github.com/librescan-org/infra) [[docs]](https://librescan-org.github.io/docs/tasks/infra)    | Terraform   | Infrastructure as code for popular platforms        |

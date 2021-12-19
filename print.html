@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="tasks/_index.html"><strong aria-hidden="true">2.</strong> LibreScan needs you!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tasks/web.html"><strong aria-hidden="true">2.1.</strong> VUEzards</a></li><li class="chapter-item expanded "><a href="tasks/api.html"><strong aria-hidden="true">2.2.</strong> API scaffolders</a></li><li class="chapter-item expanded "><a href="tasks/db.html"><strong aria-hidden="true">2.3.</strong> DB designers</a></li><li class="chapter-item expanded "><a href="tasks/scraper.html"><strong aria-hidden="true">2.4.</strong> Scraper developers</a></li><li class="chapter-item expanded "><a href="tasks/devops.html"><strong aria-hidden="true">2.5.</strong> DevOps magicians</a></li><li class="chapter-item expanded "><a href="tasks/infra.html"><strong aria-hidden="true">2.6.</strong> Infra engineers</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,6 +142,316 @@
 <p>Main issue is going 100% against blockchains' decentralization principles, as users are effectively associating all their valuable information (their wallet addresses, balances, owned token addresses etc.) with their IP addresses as soon as they make a lookup for them through such centralized explorers.</p>
 <p>The goal is to give the blockchain community an easily self hostable solution making the UI part just as much decentralized as blockchains themselves are.</p>
 <p>As a result data meant to kept private stays private indeed.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="librescan-needs-you"><a class="header" href="#librescan-needs-you">LibreScan needs you!</a></h1>
+<p>LibreScan needs talented people from the wonderful crypto community to build a truly robust service the masses can use with confidence.</p>
+<p>We compiled some sample tasks to see what kind of roles need to be filled.</p>
+<h2 id="enroll"><a class="header" href="#enroll">Enroll</a></h2>
+<p>If you see yourself fit for any of the roles do not hesitate to join the movement!</p>
+<p><a href="https://forms.gle/92JWCf18ejMaaFSF6">Click here</a> to enroll as a contributor.</p>
+<h2 id="what-needs-to-be-done"><a class="header" href="#what-needs-to-be-done">What needs to be done?</a></h2>
+<p>The following sections will give a brief overview what kind of talent the project needs:</p>
+<ul>
+<li><a href="tasks/./web.html">VUEzards</a></li>
+<li><a href="tasks/./api.html">API scaffolders</a></li>
+<li><a href="tasks/./db.html">DB designers</a></li>
+<li><a href="tasks/./scraper.html">Scraper developers</a></li>
+<li><a href="tasks/./devops.html">DevOps magicians</a></li>
+<li><a href="tasks/./infra.html">Infra engineers</a></li>
+</ul>
+<p>Read up and see how you could fit!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vuezards"><a class="header" href="#vuezards">VUEzards</a></h1>
+<p>First off LibreScan needs a user-friendly, intuitive and familiar web based frontend.
+Lowering the entry barrier for blockchain &amp; cryptocurrency users is a key mission of LibreScan, and doing that starts with a UI which is as easy as it gets.</p>
+<p>Rule of thumb is that anything that needs a user-manual to be read is not worth using for the consumer!</p>
+<hr />
+<h2 id="choice-of-framework"><a class="header" href="#choice-of-framework">Choice of framework</a></h2>
+<p>The frontend framework of choice is <a href="https://v3.vuejs.org">Vue3</a>.</p>
+<p>There are various reasons why Vue3 ended up as the winner here as follows:</p>
+<h2 id="masses-can-read--understand-it"><a class="header" href="#masses-can-read--understand-it">Masses can read &amp; understand it</a></h2>
+<p>If you know HTML + JS + CSS chances are you will have no trouble understanding Vue code.
+React &amp; Angular are way more intrusive and use much more exotic, custom structuring &amp; syntax.</p>
+<p>As with everything related to Blockchain, transparency is key so the more people can comfortably read it, the better.</p>
+<h2 id="flatter-learning-curve"><a class="header" href="#flatter-learning-curve">Flatter learning curve</a></h2>
+<p>Again, same rule applies. Vue has a much flatter learning curve compared to React &amp; Angular.
+We want to allow as many people to contribute as possible, so one plus point for Vue here as well.</p>
+<h2 id="same-philosophy"><a class="header" href="#same-philosophy">Same philosophy</a></h2>
+<p>Vue is a truly community driven framework, whereas React &amp; Angular are backed by Facebook &amp; Google respectively.
+Many developers appreciate tools that are not backed by tech giants, and this is definitely true for the crypto community.</p>
+<h2 id="popularity-market-share"><a class="header" href="#popularity-market-share">Popularity, market share</a></h2>
+<p>Philosophy is nice but when building such an important piece of an ecosystem as LibreScan, one needs to watch out for real-world trends.
+We did, and Vue is definitely gaining traction:</p>
+<p><img src="tasks/../assets/vue-chart.png" alt="" /></p>
+<p>Sure GitHub stars are not a de-facto measurement, but it clearly projects tendency. The community growth confirms this as well!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="api-scaffolders"><a class="header" href="#api-scaffolders">API scaffolders</a></h1>
+<p>After inspecting data retrievable on the most popular block explorer's endpoints, a Mock API should be designed to return static data for frontend integration</p>
+<h2 id="endpoints-to-be-inspected"><a class="header" href="#endpoints-to-be-inspected">Endpoints to be inspected:</a></h2>
+<ul>
+<li>
+<p>Listing entities</p>
+<ul>
+<li><a href="https://etherscan.io/txs">List transactions</a></li>
+<li><a href="https://etherscan.io/blocks">List blocks</a></li>
+<li><a href="https://etherscan.io/tokentxns">List all token transfers</a></li>
+<li><a href="https://etherscan.io/token/0xaaa7a10a8ee237ea61e8ac46c50a8db8bcc1baaa">List specific token transfers</a> - <strong>Note individual tabs: Transactions &amp; Holders</strong></li>
+</ul>
+</li>
+<li>
+<p>Inspecting a particular entity</p>
+<ul>
+<li><a href="https://etherscan.io/tx/0xb90286759db02d31da762da627c6b38eb0f1e6259b7cb12c5bd8361d9e8b8fd9">Inspect transaction</a></li>
+<li><a href="https://etherscan.io/block/13608386">Inspect block</a></li>
+<li><a href="https://etherscan.io/tx/0xe3a869af682a06a8546fa8385b28672706aeffe233dcb49325e54a0bded7c37a">Inspect token transfer</a></li>
+<li><a href="https://etherscan.io/address/0x4dac65c769ce98d48795facbc871745ada9e49e3">Inspect EOA</a> - <strong>Note individual tabs: Transactions &amp; ERC-20 Token Txns</strong></li>
+<li><a href="https://etherscan.io/address/0xaaa7a10a8ee237ea61e8ac46c50a8db8bcc1baaa">Inspect contract</a> - <strong>Note individual tab: Contract</strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="choice-of-language"><a class="header" href="#choice-of-language">Choice of language</a></h2>
+<p>LibreScan goes with JavaScript for its API component.
+The reasons are as follows:</p>
+<h3 id="javascript-is-still-the-most-popular-language"><a class="header" href="#javascript-is-still-the-most-popular-language">JavaScript is still the most popular language</a></h3>
+<p>Since the API component reads from the Database and can restructure it in endless possible ways to be consumed by the frontend, it was crucial to pick a widely used language so we can have many contributors.</p>
+<h3 id="performance"><a class="header" href="#performance">Performance</a></h3>
+<p>Python was another option considered here for above reasons, but it is still less popular and WAY less performant than NodeJS.
+If you want to see the actual numbers, check the popular <a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/python.html">Benchmark game</a> by Debian.</p>
+<p>While there are way more performant solutions than NodeJS (Go, Rust, C ...) they have way smaller communities (in descending order).</p>
+<p>Since the heavy lifting will be done by the scraper module anyway, NodeJS is a sane choice for the API component as it has to handle a very limited workflow.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="db-designers"><a class="header" href="#db-designers">DB designers</a></h1>
+<p>Librescan stack will utilize a PostgreSQL database to store blockchain data in the most storage efficient way without compromising on lookup speeds.</p>
+<p>It must be able to perform well even on a Raspberry Pi 4 with two attached SSD drives.</p>
+<p>The goal is to turn the following YAML draft into PostgreSQL table creation statements:</p>
+<pre><code class="language-yaml">ids:
+  id: bigserial
+  idx: bytea # 16 bytes, indexed, used for lookup
+  remainder: bytea # remainder of binary data
+  type: smallint # 0=eoa 1=contract 2=txhash 3=blockhash
+
+nicks:
+  id: bigint # foreign key id@ids
+  nick: string # nickname of the particular id 
+  type: smallint # indicates nickname type
+
+erc20tokens:
+  id: bigint # foreign key id@ids
+  name: string # token name
+  symbol: string # token symbol
+  decimals: smallint # how many decimals the token has
+  supply: bigint # divided by decimals
+
+blocks:
+  id: bigint # foreign key id@ids, the blockhash
+  height: int # block height in the chain
+  created_at: int # unix ts
+
+txs:
+  txhash: bigint # foreign key id@ids, the txhash
+  block: int # block height, foreign key height@blocks
+  value: bigint # in gwei
+  from_id: bigint # foreign key id@ids
+  to_id: bigint # foreign key id@ids
+  gas_limit: bigint
+  gas_price: bigint
+  method_id: int? # 4 bytes
+  params: bytea? # not contract deployment, not erc20 tx
+
+ethtxs: # if data == 0x tx gets inserted
+  txhash: bigint # foreign key id@ids
+  from_id: bigint # foreign key id@ids
+  to_id: bigint # foreign key id@ids
+  value: bigint # in gwei
+  
+erc20txs: # if first four bytes indicate transfer signature tx gets inserted
+  txhash: bigint # foreign key id@ids
+  token_id: bigint # foreign key id@ids
+  from_id: bigint # foreign key id@ids
+  to_id: bigint # foreign key id@ids
+  value: bigint # divided by decimals
+
+contracts:
+  txhash: bigint # foreign key id@ids
+  address_id: bigint # contract address, foreign key id@ids
+  deployer_id: bigint # deployer address, foreign key id@ids
+  bytecode: bytea # contract bytecode
+
+stats:
+  address_id: bigint # foreign key id@ids
+  token_id: bigint # foreign key id@ids, or 0 for eth transfers
+  balance: bigint # divided by decimals / gwei
+  first_in: int # unix ts
+  first_out: int # unix ts
+  last_in: int # unix ts
+  last_out: int # unix ts
+
+</code></pre>
+<p>Constructive comments to the structure are welcome as well.</p>
+<hr />
+<h2 id="choice-of-engine"><a class="header" href="#choice-of-engine">Choice of engine</a></h2>
+<p>PostgreSQL was chosen for several reasons as follows:</p>
+<h3 id="performance--scaling"><a class="header" href="#performance--scaling">Performance &amp; Scaling</a></h3>
+<p>PostgreSQL is usually the choice for open-source projects of this magnitude.
+The community around it is also preferable in our humble opinion.</p>
+<blockquote>
+<p>If you’re developing an application with a database back end, which of the two should you use? Consider PostgreSQL for any application that might grow to enterprise scope, with complex queries and frequent write operations. If you’re new to the world of databases and don’t expect your application to scale up, or you’re looking for a quick tool for prototyping, then consider MySQL.</p>
+</blockquote>
+<h3 id="philosopy"><a class="header" href="#philosopy">Philosopy</a></h3>
+<p>Again, the Philisophy of the technologies used is another important factor as we've seen when we described the previous modules. Consider the following:</p>
+<blockquote>
+<p>One of the original developers of Ingres returned to Berkeley in 1985 (after founding a company that commercialized Ingres) to develop a successor to Ingres that he named Postgres. The name was officially changed to PostgreSQL to take advantage of the reference to Structured Query Language, but the project uses both names. The first production release, PostgreSQL 6.0, came out in 1997. Now at version 14 (beta), Postgres is developed by an “unincorporated association of volunteers and companies who share code under the PostgreSQL Licence,” according to a project FAQ.</p>
+</blockquote>
+<blockquote>
+<p>Unlike PostgreSQL, MySQL has always been under corporate control. Original developer MySQL AB was acquired by Sun Microsystems in 2008, shortly before Sun was itself acquired by Oracle in 2010.</p>
+</blockquote>
+<p><em>Source from <a href="https://www.fivetran.com/blog/postgresql-vs-mysql">fivetran.com</a></em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="scraper-developers"><a class="header" href="#scraper-developers">Scraper developers</a></h1>
+<p>After the DB has been constructed and the API is ready to serve data from it to the frontend, we need to start filling the DB with real world data scraped off a real blockchain.</p>
+<p>The simple hierarchy is that each block contains N transactions. Transactions can be of various kinds, respectively:</p>
+<h2 id="regular-eth-transaction"><a class="header" href="#regular-eth-transaction">Regular ETH transaction</a></h2>
+<p>This is the simplest form of a transaction, where the particular chain's native currency (ETH on Ethereum, BNB on Binance Smart Chain, etc.) gets transferred from address 0xA to address 0xB.</p>
+<p>They can be easily recognized by the scraper as all these transactions have an empty data field (0x).</p>
+<h2 id="contract-deployment-transaction"><a class="header" href="#contract-deployment-transaction">Contract deployment transaction</a></h2>
+<p>Contract deployment transactions can be also detected without much effort, since these are the only transactions where there is no recipient defined.</p>
+<p>Any transaction where there is no recipient and the data field is not empty is definitely a contract deployment transaction.</p>
+<p>We need to further differentiate token contract and other custom contract deployments:</p>
+<ul>
+<li>ERC20 Token contract</li>
+</ul>
+<p>Such a contract implements the <a href="https://eips.ethereum.org/EIPS/eip-20">EIP-20 Token Standard Inferface</a> and has the specified method IDs present in the contract bytecode.</p>
+<ul>
+<li>Other custom contract</li>
+</ul>
+<p>Anything which is not an ERC20 token contract falls into this category, meaning if at least ONE of the method signatures present in EIP20 is not defined in the contract then it falls into this category.</p>
+<h2 id="token-transfer-transaction"><a class="header" href="#token-transfer-transaction">Token transfer transaction</a></h2>
+<p>These kind of transactions contain information about a token transaction in their either their data field or emit a Transfer(address, address, uint256) type of event during execution</p>
+<ul>
+<li>Direct transfers</li>
+</ul>
+<p>These kinds of transfers are easily recognizable from the data field's first four bytes being <code>0xa9059cbb</code> indicating the transfer(address, uint256) function signature.</p>
+<p>Two 32byte parameters will follow, the first being trimmed to 20bytes which indicates the recipient of the transfer, and the other value meaning the amount of tokens transferred in a HEX encoded form.</p>
+<ul>
+<li>Internal transfers</li>
+</ul>
+<p>When some other kind of transaction (e.g. DEX trade) moves tokens, they will event a single or multiple Transfer(address, address, uint256) signature events. These events should be parsed if they are emitted and inserted into the DB.</p>
+<hr />
+<h2 id="choice-of-language-1"><a class="header" href="#choice-of-language-1">Choice of language</a></h2>
+<p>The scraper module of LibreScan is implemented in <a href="https://go.dev">Go</a>.</p>
+<h3 id="ecosystem"><a class="header" href="#ecosystem">Ecosystem</a></h3>
+<p>Go is a quite popular programming language in the blockchain &amp; crypto ecosystem, as major players build their official engines with it.
+Just to name a few:</p>
+<ul>
+<li><a href="https://github.com/ethereum/go-ethereum">Ethereum</a></li>
+<li><a href="https://github.com/binance-chain/bsc">Binance</a></li>
+<li><a href="https://github.com/coinbase/kryptology">Coinbase</a></li>
+</ul>
+<h3 id="language-purpose"><a class="header" href="#language-purpose">Language purpose</a></h3>
+<p>While it is true that Rust is more performant than Go, but the Go language was especially designed for concurrent network based applications</p>
+<h3 id="learning-curve"><a class="header" href="#learning-curve">Learning curve</a></h3>
+<p>Again, the learning curve (=entry barrier) was an important factor as well when making the decision.
+Rust has a way steeper learning curve and has unquestionably harder to understand sources. Same philosophy applies that the more people are able to read how stuff works, the better.</p>
+<h3 id="considering-benefits--tradeoffs"><a class="header" href="#considering-benefits--tradeoffs">Considering benefits &amp; tradeoffs</a></h3>
+<p>Comparing all the above benefits of Go with the performance tradeoff against Rust, the choice was a no-brainer.
+If you love Go &amp; crypto you should really join the development to build something truly magnificent for this space!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="devops-magicians"><a class="header" href="#devops-magicians">DevOps magicians</a></h1>
+<p>The core of efficiency and transparency lies in proper structuring of microservices orchestrated to provide the backbone of Librescan.</p>
+<p>The default setup looks like the following:</p>
+<pre><code class="language-yaml">version: '3.7'
+
+services:
+
+  # THE USER FACING WEBSITE
+  web:
+    image: librescan/web:v0.0.1
+    networks:
+      - frontend
+
+  # SERVES INCOMING API REQUESTS FROM THE FRONTEND
+  api:
+    image: librescan/api:v0.0.1
+    volumes:
+      - config:/config # PERMANENT CONFIG M
+    networks:
+      - frontend # EXPOSE AT /api URL VIA INGRESS
+      - backend # MUST ACCESS DB READ REPLICA
+
+  # SERVES AS A READ-ONLY REPLICA FOR API REQUESTS
+  db-read:
+    image: librescan/db:v0.0.1
+    command: read # INSTRUCTS CONTAINER TO LAUNCH IN READ-ONLY REPLICA MODE
+    volumes:
+      - db-read:/var/lib/pgsql/data # MOUNT READ-HEAVY VOLUME
+    networks:
+      - backend # MUST ACCESS WRITABLE DB TO REPLICATE FROM
+
+  # RECEIVES STRUCTURED DATA FROM SCRAPER, OFFERS REPLICATION
+  db-write:
+    image: librescan/db:v0.0.1
+    command: write # INSTRUCTS CONTAINER TO LAUNCH IN WRITABLE MODE
+    volumes:
+      - db-write:/var/lib/pgsql/data # MOUNT WRITE-HEAVY VOLUME
+    networks:
+      - backend # MUST BE ACCESSIBLE FOR SCRAPER
+
+  # SCRAPES DATA OFF ETH RPC, STRUCTURES IT AND WRITES IT TO DB
+  scraper:
+    image: librescan/scraper:v0.0.1
+    environment:
+      RPC: https://example.com/rpc # ETH COMPATIBLE RPC ENDPOINT
+    networks:
+      - backend # MUST ACCESS WRITABLE DB TO WRITE TO
+
+networks:
+
+  # THE FRONTEND NETWORK IS CONNECTED TO INGRESS CTL
+  frontend:
+    driver: bridge
+
+  # BACKEND NETWORK IS FOR BACKEND SVC ONLY
+  backend:
+    driver: bridge
+
+volumes:
+
+  config: # VOLUME FOR PERSISTENT CONFIGURATION
+  db-read: # RESIDES ON SEPARATE READ-HEAVY TUNED DRIVE
+  db-write: # RESIDES ON SEPARATE WRITE-HEAVY TUNED DRIVE
+</code></pre>
+<p>We are looking for DevOps wizards responsible for fine-tuning the microservice structure.</p>
+<p>The first requirement is to translate above docker-compose manifest file into various Kubernetes manifests (deployments, services, ingresses, PV &amp; PVCs, etc.)</p>
+<hr />
+<h2 id="choice-of-orchestrators"><a class="header" href="#choice-of-orchestrators">Choice of orchestrator(s)</a></h2>
+<p>We have to support everything here really.
+This is not a subjective question since this part of the application is vastly different from other components.
+The other modules can be chosen by us developers, but we surely must not force users to adopt to new container orchestration systems.</p>
+<h3 id="deployment-targets-to-be-supported"><a class="header" href="#deployment-targets-to-be-supported">Deployment targets to be supported</a></h3>
+<ul>
+<li><a href="https://kubernetes.io">Kubernetes</a></li>
+<li><a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a></li>
+<li><a href="https://docs.docker.com/compose/">Docker Compose</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="infra-engineers"><a class="header" href="#infra-engineers">Infra engineers</a></h1>
+<p>Managing underlying infrastructure without inflicting direct user pain is a hard task to tackle.
+For this very reason LibreScan makes this complication vanish as well by automating infrastructure creation by declarative means.</p>
+<h2 id="goal"><a class="header" href="#goal">Goal</a></h2>
+<p>Support as many possible infrastructure providers as possible.
+Of course let's start with the most common ones like:</p>
+<ul>
+<li>Amazon AWS</li>
+<li>Google Cloud Platform</li>
+<li>Microsoft Azure</li>
+</ul>
+<p>And also aim for the popular &amp; trending choices like:</p>
+<ul>
+<li>Linode</li>
+<li>Hetzner</li>
+<li>Scaleway</li>
+</ul>
+<h2 id="see-whether-this-is-something-for-you"><a class="header" href="#see-whether-this-is-something-for-you">See whether this is something for you</a></h2>
+<p>If you can &amp; enjoy building a Kubernetes cluster from scratch on bare metal using Terraform with a zero-config approach this is definitely your dream.</p>
+<p><a href="https://github.com/poseidon/typhoon">Poseidon Typhoon</a> is the amazing work of <a href="https://github.com/dghubble">Dalton Hubble</a> which walks you through creating such a cluster powered by <a href="https://typhoon.psdn.io/fedora-coreos/bare-metal/">Fedora CoreOS</a>. See whether you can make it happen and whether you enjoy the process!</p>
+<hr />
+<h2 id="choice-of-tooling"><a class="header" href="#choice-of-tooling">Choice of tooling</a></h2>
+<p>The choice here was straightforward, <a href="https://www.terraform.io">Terraform</a> really shines in this field.
+It supports the vast majority of any possible deployment target as documented <a href="https://registry.terraform.io/browse/providers">here</a>.</p>
 
                     </main>
 

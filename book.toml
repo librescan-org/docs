@@ -6,5 +6,6 @@ multilingual = false
 src = "src"
 
 [output.html]
+site-url = "/docs/"
 git-repository-url = "https://github.com/librescan-org/docs/tree/main/"
 edit-url-template = "https://github.com/librescan-org/docs/edit/main/{path}"

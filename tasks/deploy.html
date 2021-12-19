@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>VUEzards - LibreScan - documentation</title>
+        <title>DevOps magicians - LibreScan - documentation</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -77,7 +77,7 @@
             
             <div class="sidebar-scrollbox">
                 <img src="../assets/logo.png" width="260"/>
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../tasks/_index.html"><strong aria-hidden="true">2.</strong> LibreScan needs you!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tasks/web.html" class="active"><strong aria-hidden="true">2.1.</strong> VUEzards</a></li><li class="chapter-item expanded "><a href="../tasks/api.html"><strong aria-hidden="true">2.2.</strong> API scaffolders</a></li><li class="chapter-item expanded "><a href="../tasks/db.html"><strong aria-hidden="true">2.3.</strong> DB designers</a></li><li class="chapter-item expanded "><a href="../tasks/scraper.html"><strong aria-hidden="true">2.4.</strong> Scraper developers</a></li><li class="chapter-item expanded "><a href="../tasks/devops.html"><strong aria-hidden="true">2.5.</strong> DevOps magicians</a></li><li class="chapter-item expanded "><a href="../tasks/infra.html"><strong aria-hidden="true">2.6.</strong> Infra engineers</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../tasks/_index.html"><strong aria-hidden="true">2.</strong> LibreScan needs you!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tasks/frontend.html"><strong aria-hidden="true">2.1.</strong> VUEzards</a></li><li class="chapter-item expanded "><a href="../tasks/api.html"><strong aria-hidden="true">2.2.</strong> API scaffolders</a></li><li class="chapter-item expanded "><a href="../tasks/db.html"><strong aria-hidden="true">2.3.</strong> DB designers</a></li><li class="chapter-item expanded "><a href="../tasks/scraper.html"><strong aria-hidden="true">2.4.</strong> Scraper developers</a></li><li class="chapter-item expanded "><a href="../tasks/deploy.html" class="active"><strong aria-hidden="true">2.5.</strong> DevOps magicians</a></li><li class="chapter-item expanded "><a href="../tasks/infra.html"><strong aria-hidden="true">2.6.</strong> Infra engineers</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -115,7 +115,7 @@
                         <a href="https://github.com/librescan-org/docs/tree/main/" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/librescan-org/docs/edit/main/src/tasks/web.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/librescan-org/docs/edit/main/src/tasks/deploy.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                     </div>
@@ -142,38 +142,92 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="vuezards"><a class="header" href="#vuezards">VUEzards</a></h1>
-<p>First off LibreScan needs a user-friendly, intuitive and familiar web based frontend.
-Lowering the entry barrier for blockchain &amp; cryptocurrency users is a key mission of LibreScan, and doing that starts with a UI which is as easy as it gets.</p>
-<p>Rule of thumb is that anything that needs a user-manual to be read is not worth using for the consumer!</p>
+                        <h1 id="devops-magicians"><a class="header" href="#devops-magicians">DevOps magicians</a></h1>
+<p>The core of efficiency and transparency lies in proper structuring of microservices orchestrated to provide the backbone of Librescan.</p>
+<p>The default setup looks like the following:</p>
+<pre><code class="language-yaml">version: '3.7'
+
+services:
+
+  # THE USER FACING WEBSITE
+  web:
+    image: librescan/web:v0.0.1
+    networks:
+      - frontend
+
+  # SERVES INCOMING API REQUESTS FROM THE FRONTEND
+  api:
+    image: librescan/api:v0.0.1
+    volumes:
+      - config:/config # PERMANENT CONFIG M
+    networks:
+      - frontend # EXPOSE AT /api URL VIA INGRESS
+      - backend # MUST ACCESS DB READ REPLICA
+
+  # SERVES AS A READ-ONLY REPLICA FOR API REQUESTS
+  db-read:
+    image: librescan/db:v0.0.1
+    command: read # INSTRUCTS CONTAINER TO LAUNCH IN READ-ONLY REPLICA MODE
+    volumes:
+      - db-read:/var/lib/pgsql/data # MOUNT READ-HEAVY VOLUME
+    networks:
+      - backend # MUST ACCESS WRITABLE DB TO REPLICATE FROM
+
+  # RECEIVES STRUCTURED DATA FROM SCRAPER, OFFERS REPLICATION
+  db-write:
+    image: librescan/db:v0.0.1
+    command: write # INSTRUCTS CONTAINER TO LAUNCH IN WRITABLE MODE
+    volumes:
+      - db-write:/var/lib/pgsql/data # MOUNT WRITE-HEAVY VOLUME
+    networks:
+      - backend # MUST BE ACCESSIBLE FOR SCRAPER
+
+  # SCRAPES DATA OFF ETH RPC, STRUCTURES IT AND WRITES IT TO DB
+  scraper:
+    image: librescan/scraper:v0.0.1
+    environment:
+      RPC: https://example.com/rpc # ETH COMPATIBLE RPC ENDPOINT
+    networks:
+      - backend # MUST ACCESS WRITABLE DB TO WRITE TO
+
+networks:
+
+  # THE FRONTEND NETWORK IS CONNECTED TO INGRESS CTL
+  frontend:
+    driver: bridge
+
+  # BACKEND NETWORK IS FOR BACKEND SVC ONLY
+  backend:
+    driver: bridge
+
+volumes:
+
+  config: # VOLUME FOR PERSISTENT CONFIGURATION
+  db-read: # RESIDES ON SEPARATE READ-HEAVY TUNED DRIVE
+  db-write: # RESIDES ON SEPARATE WRITE-HEAVY TUNED DRIVE
+</code></pre>
+<p>We are looking for DevOps wizards responsible for fine-tuning the microservice structure.</p>
+<p>The first requirement is to translate above docker-compose manifest file into various Kubernetes manifests (deployments, services, ingresses, PV &amp; PVCs, etc.)</p>
 <hr />
-<h2 id="choice-of-framework"><a class="header" href="#choice-of-framework">Choice of framework</a></h2>
-<p>The frontend framework of choice is <a href="https://v3.vuejs.org">Vue3</a>.</p>
-<p>There are various reasons why Vue3 ended up as the winner here as follows:</p>
-<h2 id="masses-can-read--understand-it"><a class="header" href="#masses-can-read--understand-it">Masses can read &amp; understand it</a></h2>
-<p>If you know HTML + JS + CSS chances are you will have no trouble understanding Vue code.
-React &amp; Angular are way more intrusive and use much more exotic, custom structuring &amp; syntax.</p>
-<p>As with everything related to Blockchain, transparency is key so the more people can comfortably read it, the better.</p>
-<h2 id="flatter-learning-curve"><a class="header" href="#flatter-learning-curve">Flatter learning curve</a></h2>
-<p>Again, same rule applies. Vue has a much flatter learning curve compared to React &amp; Angular.
-We want to allow as many people to contribute as possible, so one plus point for Vue here as well.</p>
-<h2 id="same-philosophy"><a class="header" href="#same-philosophy">Same philosophy</a></h2>
-<p>Vue is a truly community driven framework, whereas React &amp; Angular are backed by Facebook &amp; Google respectively.
-Many developers appreciate tools that are not backed by tech giants, and this is definitely true for the crypto community.</p>
-<h2 id="popularity-market-share"><a class="header" href="#popularity-market-share">Popularity, market share</a></h2>
-<p>Philosophy is nice but when building such an important piece of an ecosystem as LibreScan, one needs to watch out for real-world trends.
-We did, and Vue is definitely gaining traction:</p>
-<p><img src="../assets/vue-chart.png" alt="" /></p>
-<p>Sure GitHub stars are not a de-facto measurement, but it clearly projects tendency. The community growth confirms this as well!</p>
+<h2 id="choice-of-orchestrators"><a class="header" href="#choice-of-orchestrators">Choice of orchestrator(s)</a></h2>
+<p>We have to support everything here really.
+This is not a subjective question since this part of the application is vastly different from other components.
+The other modules can be chosen by us developers, but we surely must not force users to adopt to new container orchestration systems.</p>
+<h3 id="deployment-targets-to-be-supported"><a class="header" href="#deployment-targets-to-be-supported">Deployment targets to be supported</a></h3>
+<ul>
+<li><a href="https://kubernetes.io">Kubernetes</a></li>
+<li><a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a></li>
+<li><a href="https://docs.docker.com/compose/">Docker Compose</a></li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../tasks/_index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../tasks/scraper.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../tasks/api.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../tasks/infra.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -182,10 +236,10 @@ We did, and Vue is definitely gaining traction:</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../tasks/_index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../tasks/scraper.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../tasks/api.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../tasks/infra.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

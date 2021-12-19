@@ -1,6 +1,6 @@
 # Introduction
 
-QANplatform is looking for developers contributing to developing of a novel, openly accessible and truly free blockchain explorer called LibreScan.
+The <a href="http://librescan.org/" target="_blank">LibreScan</a> team is looking for developers contributing to developing of a novel, openly accessible and truly free blockchain explorer.
 
 ## Problem
 

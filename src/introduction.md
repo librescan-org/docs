@@ -27,12 +27,12 @@ As a result data meant to kept private stays private indeed.
 
 | Module                      | Lang / Tech | Purpose                                             |
 | --------------------------- | ----------- | --------------------------------------------------- |
-| [**frontend**](https://github.com/librescan-org/frontend) [[docs]](https://librescan-org.github.io/docs/tasks/frontend) | Vue3        | Responsible web frontend                            |
-| [**api**](https://github.com/librescan-org/api) [[docs]](https://librescan-org.github.io/docs/tasks/api)      | NodeJS      | Retrieves and serves chain data from DB to frontend |
-| [**db**](https://github.com/librescan-org/db) [[docs]](https://librescan-org.github.io/docs/tasks/db)       | PostgreSQL  | Stores restructured chain data from scraper         |
-| [**scraper**](https://github.com/librescan-org/scraper) [[docs]](https://librescan-org.github.io/docs/tasks/scraper)  | Go          | Scrapes & structures blockchain data                |
-| [**deploy**](https://github.com/librescan-org/deploy) [[docs]](https://librescan-org.github.io/docs/tasks/deploy)   | Various     | Orchestration platform manifests                    |
-| [**infra**](https://github.com/librescan-org/infra) [[docs]](https://librescan-org.github.io/docs/tasks/infra)    | Terraform   | Infrastructure as code for popular platforms        |
+| [**frontend**](https://librescan-org.github.io/docs/tasks/frontend) [[docs]](https://librescan-org.github.io/docs/tasks/frontend) | Vue3        | Responsible web frontend                            |
+| [**api**](https://librescan-org.github.io/docs/tasks/api) [[docs]](https://librescan-org.github.io/docs/tasks/api)      | NodeJS      | Retrieves and serves chain data from DB to frontend |
+| [**db**](https://librescan-org.github.io/docs/tasks/db) [[docs]](https://librescan-org.github.io/docs/tasks/db)       | PostgreSQL  | Stores restructured chain data from scraper         |
+| [**scraper**](https://librescan-org.github.io/docs/tasks/scraper) [[docs]](https://librescan-org.github.io/docs/tasks/scraper)  | Go          | Scrapes & structures blockchain data                |
+| [**deploy**](https://librescan-org.github.io/docs/tasks/deploy) [[docs]](https://librescan-org.github.io/docs/tasks/deploy)   | Various     | Orchestration platform manifests                    |
+| [**infra**](https://librescan-org.github.io/docs/tasks/infra) [[docs]](https://librescan-org.github.io/docs/tasks/infra)    | Terraform   | Infrastructure as code for popular platforms        |
 
 # [> register <](https://forms.gle/92JWCf18ejMaaFSF6) as a contributor
 
